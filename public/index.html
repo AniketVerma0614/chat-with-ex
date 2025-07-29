@@ -114,17 +114,23 @@
     <button id="micBtn" onclick="startVoice()">🎙️</button>
   </div>
 
+
+
+  
   <script>
     const chatBox = document.getElementById("chatBox");
     const userInput = document.getElementById("userInput");
 
-    // Load history from localStorage
-    window.onload = () => {
-      const history = JSON.parse(localStorage.getItem("chatHistory")) || [];
-      history.forEach(({ sender, message }) => {
-        displayMessage(sender, message);
-      });
-    };
+    // ← INSERT HERE
+        localStorage.removeItem("chatHistory");
+
+     // Load history from localStorage (now always empty on refresh)
+  window.onload = () => {
+    const history = JSON.parse(localStorage.getItem("chatHistory")) || [];
+    history.forEach(({ sender, message }) => {
+      displayMessage(sender, message);
+    });
+  };
 
     function displayMessage(sender, message) {
       const div = document.createElement("div");
