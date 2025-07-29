@@ -51,3 +51,6 @@ app.post("/chat", async (req, res) => {
 // Use dynamic PORT (Render) or default 3000 locally
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
+
+
+//chat-with-ex complete
